@@ -1,0 +1,35 @@
+from ex1.creature_factory import HealingCreatureFactory, TransformCreatureFactory
+from ex0.creature_factory import CreatureFactory
+
+print("Testing Creature with healing capability")
+print(" base:")
+HlFac = HealingCreatureFactory()
+Spr = HlFac.create_base()
+print(f"{Spr.describe()}")
+print(f"{Spr.attack()}")
+print(f"{Spr.heal()}")
+print(" evolved:")
+Bl = HlFac.create_evolved()
+print(f"{Bl.describe()}")
+print(f"{Bl.attack()}")
+print(f"{Bl.heal()}")
+
+print()
+print("Testing Creature with transform capability")
+print(" base:")
+TrFac = TransformCreatureFactory()
+Sh = TrFac.create_base()
+print(f"{Sh.describe()}")
+print("{Sh.attack()}")
+print(f"{Sh.transform()}")
+print(f"{Sh.attack()}")
+print(f"{Sh.revert()}")
+print(" evolved:")
+Mo = TrFac.create_evolved()
+print(f"{Mo.describe()}")
+print(f"{Mo.attack()}")
+print(f"{Mo.transform()}")
+print(f"{Mo.attack()}")
+print(f"{Mo.revert()}")
+
+
